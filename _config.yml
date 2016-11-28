@@ -1,0 +1,18 @@
+# main menu navigation
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+
+# Miscelaneous
+favicon: /favicon.png
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/shallow.css
+
+# main
+excerpt_link: Read More
+
+# foot
+themes_mata: 'Theme by <a href="https://nervouself.github.io/" target="_blank">nervouself</a>'
