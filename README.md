@@ -6,7 +6,7 @@
 
 **Install**
 
-```bath
+```bash
 npm install hexo-renderer-less --save
 git clone git@github.com:nervouself/hexo-theme-shallow.git themes/shallow
 ```
