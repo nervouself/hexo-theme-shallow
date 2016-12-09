@@ -1,0 +1,110 @@
+
+<%
+var categoriesList = list_categories(),
+  tagsList = list_tags(),
+  archivesList = list_archives();
+%>
+
+<% if (!is_year()) { %>
+  <div id="archive">
+
+    <h1>Archives</h1>
+
+    <% if (theme.atom) { %>
+      <p>
+        The feed is available via
+        <a href="<%=theme.atom%>">atom</a>.
+      </p>
+      <br>
+    <% } %>
+
+    <aside>
+      <h2>Categories</h2>
+      <% if (categoriesList) { %>
+        <%-categoriesList%>
+      <% } else { %>
+        <p>None.</p>
+      <% } %>
+    </aside>
+    <br>
+
+    <aside>
+      <h2>Tags</h2>
+      <% if (tagsList) { %>
+        <%-tagsList%>
+      <% } else { %>
+        <p>None.</p>
+      <% } %>
+    </aside>
+    <br>
+
+    <aside>
+      <h2>Archives</h2>
+      <% if (archivesList) { %>
+        <%-archivesList%>
+      <% } else { %>
+        <p>None.</p>
+      <% } %>
+    </aside>
+
+  </div>
+<% } else { %>
+
+  <h1><%=page.month + '/' + page.year%></h1>
+
+  <% page.posts.each(function(article) { %>
+    <div class="archive-item">
+      <% if (article.link) { %>
+        <!-- external link -->
+        <a href="<%=url_for(article.link)%>" target="_blank">
+          <%=article.title || 'No Title'%>
+        </a>
+      <% } else { %>
+        <!-- internal link -->
+        <a href="<%=url_for(article.path)%>">
+          <%=article.title || 'No Title'%>
+        </a>
+      <% } %>
+      <time datetime="<%=date_xml(article.date)%>">
+        <%=date(article.date)%>
+      </time>
+    </div>
+  <% }); %>
+
+<% } %>
+
+<%-partial('partials/pagination')%>
+
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+<% } else { %>
+  <% var last; %>
+  <% page.posts.each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+        </div></section>
+      <% } %>
+      <% last = year; %>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        </div>
+        <div class="archives">
+    <% } %>
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></section>
+  <% } %>
+<% } %>
+<% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: "&laquo; __('prev')",
+      next_text: "__('next') &raquo;"
+    }) %>
+  </nav>
+<% } %>
