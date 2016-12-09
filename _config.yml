@@ -16,3 +16,12 @@ excerpt_link: Read More
 
 # foot
 themes_mata: 'Theme by <a href="https://nervouself.github.io/" target="_blank">nervouself</a>'
+
+# Sidebar
+sidebar: right
+widgets:
+# - category
+# - tag
+# - tagcloud
+# - archive
+- recent_posts
