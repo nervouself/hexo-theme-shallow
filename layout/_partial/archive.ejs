@@ -1,6 +1,4 @@
 
-<%-partial('partials/pagination')%>
-
 <% if (pagination == 2){ %>
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
@@ -8,27 +6,19 @@
 <% } else { %>
 
 <%
-var categoriesList = list_categories(),
-  tagsList = list_tags(),
-  archivesList = list_archives();
+var categoriesList = list_categories({class: 'archive-nav'}),
+  tagsList = list_tags({class: 'archive-nav'}),
+  archivesList = list_archives({class: 'archive-nav'});
 %>
 
   <div id="archive">
 
     <h1>Archives</h1>
 
-    <% if (theme.atom) { %>
-      <p>
-        The feed is available via
-        <a href="<%=theme.atom%>">atom</a>.
-      </p>
-      <br>
-    <% } %>
-
     <aside>
-      <h2>Categories</h2>
-      <% if (categoriesList) { %>
-        <%-categoriesList%>
+      <h2>Dates</h2>
+      <% if (archivesList) { %>
+        <%-archivesList%>
       <% } else { %>
         <p>None.</p>
       <% } %>
@@ -46,9 +36,9 @@ var categoriesList = list_categories(),
     <br>
 
     <aside>
-      <h2>Archives</h2>
-      <% if (archivesList) { %>
-        <%-archivesList%>
+      <h2>Categories</h2>
+      <% if (categoriesList) { %>
+        <%-categoriesList%>
       <% } else { %>
         <p>None.</p>
       <% } %>
