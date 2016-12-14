@@ -1,13 +1,84 @@
+.archives-nav
+  @media screen and (max-width: 767px)
+    text-align: center
+    margin: (block-margin/2) 0
+    padding-bottom: (block-margin/4)
+    display: flex
+    justify-content: space-around
+    max-height: 75px
+    border-bottom: 1px dashed color-grey
+  @media mq-normal
+    margin: block-margin 0
+    width:14%
+    float:left
+
+.archives-nav-aside
+  min-width: 100px
+  overflow: hidden
+  font-size: 14px
+  @media mq-normal
+    margin-bottom: 1em
+
+.archives-nav-aside-h
+  text-transform: uppercase
+  color: color-grey
+  line-height: 1em
+  height: 15px
+  text-shadow: 0 1px #fff
+  font-weight: bold
+
+.archives-nav-list-wrap
+  @media screen and (max-width: 767px)
+    max-height: 60px
+    overflow: auto
+
+.archives-nav-list
+  @media screen and (max-width: 767px)
+    display:flex
+    justify-content:center
+    flex-wrap: wrap
+
+.archives-nav-list-item
+  @media screen and (max-width: 767px)
+    background: #fff
+    padding: 0 4px
+    margin: 1px
+    border: 1px solid color-border
+
+.archives-nav-list-link
+  text-decoration: none
+  color: color-default
+  transition: color 0.2s
+  line-height: line-height
+  @media screen and (max-width: 767px)
+    color: color-orange
+  &:hover
+    color: color-orange
+
+.archives-nav-list-count
+  color: color-grey
+  margin-left: .5em
+  &:before
+    content: '('
+  &:after
+    content: ')'
+  @media screen and (max-width: 767px)
+    display: none
+
 .archives-wrap
-  margin: block-margin 0
+  margin: (block-margin/2) 0 block-margin
+  @media mq-normal
+    margin: block-margin 0
+    float: right
+    width: 85%
 
 .archives
   clearfix()
 
-.archive-year-wrap
+.archive-h-wrap
   margin-bottom: 1em
 
-.archive-year
+.archive-h
   @extend $block-caption
 
 .archives
@@ -31,6 +102,7 @@
   color: color-default
   transition: color 0.2s
   line-height: line-height
+  display: block
   &:hover
     color: color-link
 
@@ -42,7 +114,7 @@
   text-decoration: none
   font-size: 0.85em
   line-height: 1em
-  margin-bottom: 0.5em
+  padding-bottom: 0.5em
   display: block
 
 #page-nav

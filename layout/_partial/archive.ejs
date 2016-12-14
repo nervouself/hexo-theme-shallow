@@ -6,45 +6,47 @@
 <% } else { %>
 
 <%
-var categoriesList = list_categories({class: 'archive-nav'}),
-  tagsList = list_tags({class: 'archive-nav'}),
-  archivesList = list_archives({class: 'archive-nav'});
+var categoriesList = list_categories({class: 'archives-nav'}),
+  tagsList = list_tags({class: 'archives-nav'}),
+  archivesList = list_archives({class: 'archives-nav',type:'yearly',format:'YYYY'});
 %>
 
-  <div id="archive">
+  <section class="archives-nav">
 
-    <h1>Archives</h1>
-
-    <aside>
-      <h2>Dates</h2>
-      <% if (archivesList) { %>
-        <%-archivesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Tags</h2>
-      <% if (tagsList) { %>
-        <%-tagsList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Categories</h2>
-      <% if (categoriesList) { %>
-        <%-categoriesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
+    <aside class="archives-nav-aside">
+      <h2 class="archives-nav-aside-h">Categories</h2>
+      <div class="archives-nav-list-wrap">
+        <% if (categoriesList) { %>
+          <%-categoriesList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
     </aside>
 
-  </div>
+    <aside class="archives-nav-aside">
+      <h2 class="archives-nav-aside-h">Tags</h2>
+      <div class="archives-nav-list-wrap">
+        <% if (tagsList) { %>
+          <%-tagsList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
+    </aside>
+
+    <aside class="archives-nav-aside">
+      <h2 class="archives-nav-aside-h">Dates</h2>
+      <div class="archives-nav-list-wrap">
+        <% if (archivesList) { %>
+          <%-archivesList%>
+        <% } else { %>
+          <p>None.</p>
+        <% } %>
+      </div>
+    </aside>
+
+  </section>
   
   <% var last; %>
   <% page.posts.each(function(post, i){ %>
@@ -55,8 +57,14 @@ var categoriesList = list_categories({class: 'archive-nav'}),
       <% } %>
       <% last = year; %>
       <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        <div class="archive-h-wrap">
+          <% if (is_year()){ %>
+            <h2 class="archive-h"><%= page.year %></h2>
+          <% } else if (is_category()){ %>
+            <h2 class="archive-h"><%= page.category %></h2>
+          <% } else if (is_tag()){ %>
+            <h2 class="archive-h"><%= page.tag %></h2>
+          <% } %>
         </div>
         <div class="archives">
     <% } %>

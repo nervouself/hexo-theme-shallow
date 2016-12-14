@@ -12,6 +12,21 @@
   @extend $block-caption
   float: left
 
+// .article-footer
+//   clearfix()
+//   font-size: 0.85em
+//   line-height: line-height
+//   border-top: 1px solid color-border
+//   padding-top: line-height
+//   margin: 0 article-padding article-padding
+//   @media mq-mobile
+//     margin: 0 (article-padding/3) (article-padding/3)
+//   a
+//     color: color-grey
+//     text-decoration: none
+//     &:hover
+//       color: color-default
+
 .article-category
   float: left
   line-height: 1em
@@ -19,14 +34,14 @@
   text-shadow: 0 1px #fff
   margin-left: 8px
   &:before
-    content: "\2022"
+    content: "ss"
 
 .article-category-link
   @extend $block-caption
   margin: 0 12px 1em
 
 .article-header
-  padding: article-padding article-padding 0
+  margin: article-padding
   @media mq-mobile
     padding: (article-padding/3) (article-padding/3) 0
 
@@ -44,7 +59,7 @@
   @extend $base-style
   clearfix()
   color: color-default
-  padding: 0 article-padding
+  padding: 0 article-padding article-padding
   @media mq-mobile
     padding: 0 (article-padding/3)
   p, table
@@ -139,21 +154,6 @@
     color: #fff
     text-decoration: none
     text-shadow: 0 1px darken(color-link, 20%)
-
-.article-footer
-  clearfix()
-  font-size: 0.85em
-  line-height: line-height
-  border-top: 1px solid color-border
-  padding-top: line-height
-  margin: 0 article-padding article-padding
-  @media mq-mobile
-    margin: 0 (article-padding/3) (article-padding/3)
-  a
-    color: color-grey
-    text-decoration: none
-    &:hover
-      color: color-default
 
 .article-tag-list-item
   float: left
