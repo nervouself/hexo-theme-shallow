@@ -12,13 +12,19 @@ input, button
     border: 0
     padding: 0
 
-html, body, #container
+html, body
   height: 100%
 
 body
   background: color-background
   font: font-size font-sans
   -webkit-text-size-adjust: 100%
+
+#container
+  min-height: 100%
+
+#main
+  padding-bottom: (banner-height + block-margin / 10)
 
 .outer
   clearfix()
@@ -42,13 +48,6 @@ body
 
 #container
   position: relative
-
-#wrap
-  height: 100%
-  width: 100%
-  position: absolute
-  top: 0
-  left: 0
   transition: 0.2s ease-out
   z-index: 1
   background: color-background

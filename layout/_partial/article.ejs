@@ -1,29 +1,31 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-  </div>
+
   <div class="article-inner">
-    <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
+
+      <div class="header-meta">
+        <%- partial('post/date', {class_name: 'article-date', date_format: 'MMM D, YYYY'}) %>
+      </div>
+
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
-          </p>
-        <% } %>
       <% } else { %>
         <%- post.content %>
       <% } %>
     </div>
     <footer class="article-footer">
-      <%- partial('post/category') %>
+        <%- partial('post/category') %>
       <%- partial('post/tag') %>
+      <% if (post.excerpt && index){ %>
+        <% if (theme.excerpt_link){ %>
+          <a class="article-more-link" href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
+        <% } %>
+      <% } %>
     </footer>
   </div>
   <% if (!index){ %>

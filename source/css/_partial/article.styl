@@ -5,45 +5,59 @@
   @extend $block
   overflow: hidden
 
-.article-meta
-  clearfix()
-
-.article-date
-  @extend $block-caption
-  float: left
-
-// .article-footer
-//   clearfix()
-//   font-size: 0.85em
-//   line-height: line-height
-//   border-top: 1px solid color-border
-//   padding-top: line-height
-//   margin: 0 article-padding article-padding
-//   @media mq-mobile
-//     margin: 0 (article-padding/3) (article-padding/3)
-//   a
-//     color: color-grey
-//     text-decoration: none
-//     &:hover
-//       color: color-default
-
-.article-category
-  float: left
-  line-height: 1em
+.header-meta
+  margin-bottom: 5px
+  font-size: 0.85em
   color: #ccc
-  text-shadow: 0 1px #fff
-  margin-left: 8px
-  &:before
-    content: "ss"
 
-.article-category-link
-  @extend $block-caption
-  margin: 0 12px 1em
+.article-footer
+  clearfix()
+  font-size: 0.85em
+  line-height: line-height
+  background: #fafafa
+  border-top: 1px solid color-border
+  padding: (article-padding/2) article-padding
+  display: flex
+  @media mq-mobile
+    padding: (article-padding/3)
+
+.article-tag-list
+  flex:1
+
+.article-tag-list-item
+  float: left
+  margin-right: 10px
+  @media mq-normal
+    margin: 10px
+    margin-left: 0
+
+.article-tag-list-link
+  color: color-grey
+  text-decoration: none
+  &:before
+    content: "#"
+  &:hover
+    color: color-default
+
+.article-category-list
+  float: left
+  margin-right: 10px
+  @media mq-normal
+    margin: 10px
+    margin-left: 0
+
+.article-category-list-link
+  text-decoration: none
+  color: color-grey
+  &:before
+    content: "> "
+  &:hover
+    color: color-orange
 
 .article-header
   margin: article-padding
   @media mq-mobile
-    padding: (article-padding/3) (article-padding/3) 0
+    margin: (article-padding/3)
 
 .article-title
   text-decoration: none
@@ -57,7 +71,6 @@
 
 .article-entry
   @extend $base-style
-  clearfix()
   color: color-default
   padding: 0 article-padding article-padding
   @media mq-mobile
@@ -140,28 +153,17 @@
       height: 100%
       margin-top: 0
 
-.article-more-link a
+.article-more-link
   display: inline-block
-  line-height: 1em
-  padding: 6px 15px
-  border-radius: 15px
-  background: color-background
-  color: color-grey
-  text-shadow: 0 1px #fff
+  padding: 10px 20px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  background-color: #ccc;
+  color: #fff;
   text-decoration: none
+  float: right
   &:hover
-    background: color-link
-    color: #fff
-    text-decoration: none
-    text-shadow: 0 1px darken(color-link, 20%)
-
-.article-tag-list-item
-  float: left
-  margin-right: 10px
-
-.article-tag-list-link
-  &:before
-    content: "#"
+    background: color-orange
 
 #article-nav
   clearfix()
