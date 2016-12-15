@@ -17,15 +17,14 @@
   background: #fafafa
   border-top: 1px solid color-border
   padding: (article-padding/2) article-padding
-  display: flex
+  position: relative
   @media mq-mobile
     padding: (article-padding/3)
 
 .article-tag-list
-  flex:1
+  float: left
 
 .article-tag-list-item
-  float: left
   margin-right: 10px
   @media mq-normal
     margin: 10px
@@ -155,7 +154,6 @@
 .article-more-link
   display: inline-block
   padding: 10px 20px
-  border: 1px solid #bbb
   border-radius: 3px
   background-color: #ccc
   transition: background-color 0.2s ease-out
