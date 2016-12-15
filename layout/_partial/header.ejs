@@ -4,8 +4,9 @@
 
   <div class="outer">
 
-    <a href="<%- url_for() %>">
-      <h1 class="logo-title">
+    <a class="logo-wrap" href="<%- url_for() %>">
+      <span class="logo"></span>
+      <h1 class="logo-title" data-word="<%= config.title %>">
         <%= config.title %>
       </h1>
     </a>

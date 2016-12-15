@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="keywords" content="nervouself,shilei,时磊" />
+  <meta name="description" content="<%= config.description %>" />
   <%
   var title = page.title;
 
@@ -21,10 +23,9 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
+  <link rel="shortcut icon" href="<%- theme.favicon %>">
   <% } %>
-  <!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
   <%- css('css/style') %>
 </head>

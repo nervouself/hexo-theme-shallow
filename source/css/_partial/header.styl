@@ -8,30 +8,112 @@
   height: (block-margin/10)
   background: repeating-linear-gradient(30deg,color-link,color-link 9px,color-orange 9px,color-orange 13px)
 
-.logo-title
+.logo-wrap
+  clearfix()
   float: left
-  padding-left: banner-height
-  font-size: 40px
+  @media mq-mobile
+    display: flex
+    justify-content: center
+    float: none
+    height: (banner-height/2)
+    transform: translate3d(0,5px,0)
+
+.logo
+  float: left
+  display: block
+  width: 60px
+  height: banner-height
+  background: url('img/shallow-icon.png') no-repeat left center
+  background-size: 83% auto
+  @media mq-mobile
+    height: (banner-height/2)
+
+.logo-title
+  position:relative
+  float: left
+  font-size: 30px
   text-decoration: none
   color: #fff
   line-height: banner-height
   height: banner-height
-  background: url(img/shallow-icon.png)
+  @media mq-mobile
+    float: none
+    text-align: center
+    line-height: (banner-height/2)
+    height: (banner-height/2)
+
+.logo-title:before
+  content:attr(data-word)
+  position:absolute
+  top:0
+  left:0.5px
+  height:0px
+  color:rgba(0,0,0,.9)
+  overflow:hidden
+  z-index:2
+  animation:redShadow 1s ease-in infinite
+  -webkit-filter:contrast(200%)
+  text-shadow:0.2px 0 0 red
+
+.logo-title:after
+  content:attr(data-word)
+  position:absolute
+  top:0
+  left:2px
+  height:36px
+  color:rgba(#fff,.8)
+  overflow:hidden
+  z-index:3
+  animation:redHeight 1.5s ease-out infinite
+
+@keyframes redShadow
+  20%
+    height:64%
+  60%
+    height:12%
+  100%
+    height:82%
+
+@keyframes redHeight
+  20%
+    height:82%
+  35%
+    height:24%
+  50%
+    height:80%
+  60%
+    height:40%
+  70%
+    height:68%
+  80%
+    height:44%
+  100%
+    height:0%
 
 .main-nav
   float: right
   height: banner-height
+  @media mq-mobile
+    display: flex
+    justify-content: center
+    float: none
+    height: (banner-height/2)
 
 .main-nav-link
-  font-weight: bold
   letter-spacing: 1px
   line-height: banner-height
   float: left
-  color: #fff
-  opacity: 0.6
+  color: color-grey
   text-decoration: none
-  transition: opacity 0.2s
+  transition: color 0.2s ease-out
   display: block
   padding: 0 15px
   &:hover
-    opacity: 1
+    color: #fff
+  &:nth-last-child(1)
+    padding-right: 0
+  @media mq-mobile
+    line-height: (banner-height/2)
+    padding: 0 10px
+    &:nth-last-child(1)
+      padding-right: 10px

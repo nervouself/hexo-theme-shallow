@@ -34,6 +34,7 @@
 .article-tag-list-link
   color: color-grey
   text-decoration: none
+  transition: color 0.2s ease-out
   &:before
     content: "#"
   &:hover
@@ -49,6 +50,7 @@
 .article-category-list-link
   text-decoration: none
   color: color-grey
+  transition: color 0.2s ease-out
   &:before
     content: "> "
   &:hover
@@ -62,10 +64,9 @@
 .article-title
   text-decoration: none
   font-size: 2em
-  font-weight: bold
   color: color-default
   line-height: line-height-title
-  transition: color 0.2s
+  transition: color 0.2s ease-out
   a&:hover
     color: color-link
 
@@ -78,8 +79,6 @@
   p, table
     line-height: line-height
     margin: line-height 0
-  h1, h2, h3, h4, h5, h6
-    font-weight: bold
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
@@ -155,10 +154,11 @@
 
 .article-more-link
   display: inline-block
-  padding: 10px 20px;
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  background-color: #ccc;
+  padding: 10px 20px
+  border: 1px solid #bbb
+  border-radius: 3px
+  background-color: #ccc
+  transition: background-color 0.2s ease-out
   color: #fff;
   text-decoration: none
   float: right

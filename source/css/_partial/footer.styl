@@ -7,6 +7,65 @@
   bottom: 0
 
 .footer-info
+  position: relative
   line-height: banner-height
-  text-align: center
   font-size: 0.85em
+
+.gt
+  width: 30px
+  height: 30px
+  font-size: 30px
+  position:absolute
+  margin: auto
+  right: 0
+  top: 0
+  bottom: 0
+  text-align: center
+  line-height: 30px
+  border: 1px solid #bbb
+  border-radius: 3px
+  color: #fff
+  transition: background-color 0.2s ease-out
+  text-decoration: none
+  &:hover
+    background: color-link
+  &:hover:before
+  &:hover:after
+    background: #fff
+    animation: .8s up
+
+.gt:before, .gt:after
+  content:""
+  display:inline-block
+  position:absolute
+  top:50%
+  left:50%
+  width:.08em
+  height:.08em
+  background:#979797
+  transform:translate(-50%,-50%) rotateZ(45deg)
+  border-radius:.05em
+
+.gt:before
+  left:65%
+  width:.5em
+.gt:after
+  left:35%
+  height:.5em
+
+@keyframes up 
+  0%   
+    top:50%
+    opacity:1
+  25%  
+    top:50%
+    opacity:1
+  50%  
+    top:15%
+    opacity:0
+  75%  
+    top:85%
+    opacity:0
+  100% 
+    top:50%
+    opacity:1
