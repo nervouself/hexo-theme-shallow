@@ -61,9 +61,9 @@ var categoriesList = list_categories({class: 'archives-nav'}),
           <% if (is_year()){ %>
             <h2 class="archive-h"><%= page.year %></h2>
           <% } else if (is_category()){ %>
-            <h2 class="archive-h"><%= page.category %></h2>
+            <h2 class="archive-h">><%= page.category %></h2>
           <% } else if (is_tag()){ %>
-            <h2 class="archive-h"><%= page.tag %></h2>
+            <h2 class="archive-h">#<%= page.tag %></h2>
           <% } %>
         </div>
         <div class="archives">
