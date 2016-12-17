@@ -1,7 +1,6 @@
 @import "nib"
 @import "_variables"
 @import "_util/mixin"
-@import "_util/grid"
 
 global-reset()
 
@@ -34,9 +33,6 @@ body
   padding: 0 gutter-width
   @media mq-mobile
     padding: 0 (gutter-width / 4)
-
-.inner
-  column(columns)
 
 .left, .alignleft
   float: left

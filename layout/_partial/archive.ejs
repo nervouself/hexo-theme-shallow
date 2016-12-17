@@ -47,16 +47,8 @@ var categoriesList = list_categories({class: 'archives-nav'}),
     </aside>
 
   </section>
-  
-  <% var last; %>
-  <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
-      <% } %>
-      <% last = year; %>
-      <section class="archives-wrap">
+
+    <section class="archives-wrap">
         <div class="archive-h-wrap">
           <% if (is_year()){ %>
             <h2 class="archive-h"><%= page.year %></h2>
@@ -64,12 +56,11 @@ var categoriesList = list_categories({class: 'archives-nav'}),
             <h2 class="archive-h">><%= page.category %></h2>
           <% } else if (is_tag()){ %>
             <h2 class="archive-h">#<%= page.tag %></h2>
-          <% } else { %>
-            <h2 class="archive-h"><%= year %></h2>
           <% } %>
         </div>
-        <div class="archives">
-    <% } %>
+      <div class="archives">
+
+  <% page.posts.each(function(post, i){ %>
     <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
   <% }) %>
   <% if (page.posts.length){ %>
