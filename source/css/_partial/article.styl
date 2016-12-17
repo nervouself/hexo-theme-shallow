@@ -21,10 +21,9 @@
   @media mq-mobile
     padding: (article-padding/3)
 
-.article-tag-list
-  float: left
-
+.article-category-list-item
 .article-tag-list-item
+  float: left
   margin-right: 10px
   @media mq-normal
     margin: 10px
@@ -38,13 +37,6 @@
     content: "#"
   &:hover
     color: color-default
-
-.article-category-list
-  float: left
-  margin-right: 10px
-  @media mq-normal
-    margin: 10px
-    margin-left: 0
 
 .article-category-list-link
   text-decoration: none
@@ -153,7 +145,10 @@
 
 .article-more-link
   display: inline-block
-  padding: 10px 20px
+  width:100px
+  height:40px
+  line-height: 40px
+  text-align: center
   border-radius: 3px
   background-color: #ccc
   transition: background-color 0.2s ease-out

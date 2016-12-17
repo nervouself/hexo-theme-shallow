@@ -1,13 +1,10 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-
   <div class="article-inner">
     <% if (post.link || post.title){ %>
       <header class="article-header">
-
       <div class="header-meta">
         <%- partial('post/date', {class_name: 'article-date', date_format: 'MMM D, YYYY'}) %>
       </div>
-
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
     <% } %>
@@ -19,13 +16,14 @@
       <% } %>
     </div>
     <footer class="article-footer">
-        <%- partial('post/category') %>
-      <%- partial('post/tag') %>
+      <%- partial('post/category') %>
       <% if (post.excerpt && index){ %>
         <% if (theme.excerpt_link){ %>
           <a class="article-more-link" href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
         <% } %>
       <% } %>
+      <%- partial('post/tag') %>
+      
     </footer>
   </div>
   <% if (!index){ %>
