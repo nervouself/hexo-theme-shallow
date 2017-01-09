@@ -12,11 +12,18 @@
         _imgs = document.querySelectorAll('article img');
     _close.addEventListener('click',function(){
         _popup.style.display = "none";
+        document.removeEventListener('DOMMouseScroll',_wheelFunc);
+        document.removeEventListener('mousewheel',_wheelFunc);
     });
+    var _wheelFunc = function(e){
+        e.preventDefault();
+    }
     for (var i = 0, len = _imgs.length; i < len; i++) {
         _imgs[i].addEventListener('click',function(){
             _lightbox.innerHTML = '<img src="' + this.src + '" />';
             _popup.style.display = "block";
+            document.addEventListener('DOMMouseScroll',_wheelFunc);
+            document.addEventListener('mousewheel',_wheelFunc);
         });
     }
 </script>
