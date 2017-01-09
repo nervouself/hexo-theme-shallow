@@ -1,0 +1,51 @@
+.popup
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 101
+  background: rgba(0,0,0,.7)
+  display: none
+
+.close-pop
+  transition: .2s ease-out
+  position: absolute
+  top: 10px
+  right: 10px;
+  z-index: 103
+  box-sizing: content-box
+  width: 50px
+  height: 50px
+  border: 1px solid #eee
+  border-radius: 10px
+  cursor: pointer
+  opacity: .5
+  &:before, &:after
+    content: ""
+    display: inline-block
+    position: absolute
+    top:50%;
+    left:50%;
+    background: #eee
+    transform: translate(-50%,-50%) rotateZ(45deg);
+    border-radius: 3px;
+  &:before
+    width: 6px
+    height: 50px
+  &:after
+    width: 50px
+    height: 6px
+  &:hover
+    opacity: 1
+    
+
+.lightbox
+  position: absolute
+  top: 50%
+  left: 50%
+  max-width: 100%
+  max-height: 100%
+  overflow: auto
+  transform: translate(-50%,-50%)
+  z-index: 102

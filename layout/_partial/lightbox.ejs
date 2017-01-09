@@ -1,0 +1,22 @@
+<div class="popup">
+    <span class="close-pop"></span>
+    <div class="lightbox">
+        
+    </div>
+</div>
+
+<script>
+    var _popup = document.querySelector('.popup'),
+        _close = document.querySelector('.close-pop'),
+        _lightbox = document.querySelector('.lightbox'),
+        _imgs = document.querySelectorAll('article img');
+    _close.addEventListener('click',function(){
+        _popup.style.display = "none";
+    });
+    for (var i = 0, len = _imgs.length; i < len; i++) {
+        _imgs[i].addEventListener('click',function(){
+            _lightbox.innerHTML = '<img src="' + this.src + '" />';
+            _popup.style.display = "block";
+        });
+    }
+</script>
