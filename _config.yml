@@ -1,8 +1,8 @@
 # main menu navigation
 menu:
   Home: /
-  Archives: /archives
-  About: /about
+  Archives: /archives/
+  About: /about/
 
 # Miscelaneous
 favicon: /favicon.png
