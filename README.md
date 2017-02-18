@@ -1,10 +1,12 @@
 # hexo-theme-shallow
 
-> A simple & responsive & pretty theme for Hexo
+> A simple & responsive & pretty theme for Hexo, Online Demo → [click here](https://nervouself.github.io/)
 
-![hexo-theme-shallow](http://p1.bqimg.com/4851/d89c8356b7caa901.png)
+![hexo-theme-shallow](http://oib8kvha0.bkt.clouddn.com/blog_index.png)
 
-> [Online Demo](https://nervouself.github.io/)
+![desktop_archive](http://oib8kvha0.bkt.clouddn.com/desktop_archive.png)
+
+![mobile_archive](http://oib8kvha0.bkt.clouddn.com/mobile_archive.png)
 
 ## Installation
 
